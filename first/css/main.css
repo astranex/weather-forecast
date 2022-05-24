@@ -1,9 +1,14 @@
 body {
    background: #0a081f;
    font-family: "Montserrat", sans-serif;
-   font-weight: 500;
+   font-weight: 600;
    margin: 0;
    padding: 0;
+ }
+
+ input, button {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
  }
  
  img {
@@ -34,7 +39,7 @@ body {
    top: 0;
    width: 480px;
    transform: translateX(-200%);
-   background: #8781c5;
+   background: #308edb;
    border-radius: 4px;
    height: 100%;
    display: flex;
@@ -138,9 +143,9 @@ body {
  }
  
  .container.is-day::before {
-   background: url(..img/figure2.svg) no-repeat center / cover;
+   background: url(../img/figure2.svg) no-repeat center / cover;
  }
- 
+
  .top {
    position: relative;
    padding: 18px;
@@ -166,7 +171,7 @@ body {
  }
  
  .city-title {
-   background: #8781c5;
+   background: #295cd3;
    border-radius: 8px;
    font-weight: 700;
    font-size: 35px;
@@ -177,6 +182,10 @@ body {
    cursor: pointer;
    width: max-content;
  }
+
+ .container.is-day .city-title {
+  background: #0f7cf8;
+}
  
  .city-info {
    margin-top: 28px;
@@ -189,14 +198,12 @@ body {
  }
  
  .city-info__title {
-   font-weight: 500;
    font-size: 53px;
    line-height: 77px;
    color: #ffffff;
  }
  
  .description {
-   font-weight: 500;
    font-size: 25px;
    line-height: 36px;
    color: #ffffff;
@@ -212,7 +219,10 @@ body {
  }
  
  .property {
-   width: 50%;
+   margin-bottom: 10px;
+   padding-bottom: 5px;
+   margin-left: 25px;
+   width: 40%;
    display: flex;
    align-items: center;
  }
@@ -230,7 +240,6 @@ body {
  }
  
  .property-info__description {
-   font-weight: 300;
    font-size: 12px;
    line-height: 12px;
    text-transform: uppercase;
