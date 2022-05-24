@@ -85,19 +85,19 @@ const fetchData = async () => {
           pressure: {
             // title: "Давление",
             title: "Pressure",
-            value: `${pressure} Pa`,
+            value: `${pressure} mb`,
             icon: "gauge.png",
           },
           uvIndex: {
             // title: "УФ-индекс",
             title: "UV-index",
-            value: `${uvIndex} / 100`,
+            value: `${uvIndex} level`,
             icon: "uv-index.png",
           },
           visibility: {
             // title: "Видимость",
             title: "Visibility",
-            value: `${visibility}%`,
+            value: `${visibility} km`,
             icon: "visibility.png",
           },
    
