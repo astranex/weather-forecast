@@ -1,4 +1,4 @@
-const link = 'http://api.weatherstack.com/current?access_key=910defd469584ba0a43b99f57618d0a6'
+const link = 'http://api.weatherstack.com/current?access_key=f7c979d0e7c28008a336968b6dc80bdc'
 
 // language = ru русский язык API поддерживается только на профессиональном тарифном плане
 
@@ -65,32 +65,38 @@ const fetchData = async () => {
 
       properties: {
          cloudcover: {
-            title: "Облачность",
+            // title: "Облачность",
+            title: "Cloudcover",
             value: `${cloudcover}%`,
             icon: "cloud.png",
           },
           humidity: {
-            title: "Влажность",
+            // title: "Влажность",
+            title: "Humidity",
             value: `${humidity}%`,
             icon: "humidity.png",
           },
           windSpeed: {
-            title: "Скорость ветра",
-            value: `${windSpeed} км/ч`,
+            // title: "Скорость ветра",
+            title: "Wind Speed",
+            value: `${windSpeed} km/h`,
             icon: "wind.png",
           },
           pressure: {
-            title: "Давление",
-            value: `${pressure} Па`,
+            // title: "Давление",
+            title: "Pressure",
+            value: `${pressure} Pa`,
             icon: "gauge.png",
           },
           uvIndex: {
-            title: "УФ-индекс",
+            // title: "УФ-индекс",
+            title: "UV-index",
             value: `${uvIndex} / 100`,
             icon: "uv-index.png",
           },
           visibility: {
-            title: "Видимость",
+            // title: "Видимость",
+            title: "Visibility",
             value: `${visibility}%`,
             icon: "visibility.png",
           },
@@ -113,18 +119,20 @@ function getImage(description) {
    const value = description.toLowerCase();
  
    switch (value) {
+     case "overcast":
+       return "overcast.png"
      case "partly cloudy":
        return "partly.png";
-     case "cloud":
-       return "cloud.png";
      case "fog":
-       return "fog.png";
+       return "fog.png"
      case "sunny":
-       return "sunny.png";
+       return "sunny.png"
      case "cloud":
-       return "cloud.png";
+       return "cloud.png"
+     case "clear":
+      return "clear.png"
      default:
-       return "the.png";
+       return "the.png"
    }
 }
 
@@ -140,7 +148,7 @@ function renderProperty(properties) {
                </div>
                <div class="property-info">
                <div class="property-info__value">${value}</div>
-               <div id="google_translate_element" class="property-info__description">${title}</div>
+               <div class="property-info__description">${title}</div>
                </div>
             </div>`
       }).join('')
@@ -154,18 +162,18 @@ function markup() {
    return `<div class="container ${containerClass}">
             <div class="top">
             <div class="city">
-               <div class="city-subtitle">Сегодня в городе</div>
-                  <div class="city-title" id="city" id="google_translate_element">
+               <div class="city-subtitle">Today in</div>
+                  <div class="city-title" id="city">
                   <span>${city}</span>
                </div>
             </div>
             <div class="city-info">
                <div class="top-left">
-               <img class="icon" src="./img/${getImage(description)}" alt="" />
+               <img class="icon" src="./img/weather/${getImage(description)}" alt="" />
                <div class="description">${description}</div>
             </div>
             <div class="top-right">
-               <div class="city-info__subtitle">По состоянию на ${observationTime}</div>
+               <div class="city-info__subtitle">As of ${observationTime}</div>
                <div class="city-info__title">${temperature}°</div>
             </div>
             </div>
@@ -185,9 +193,9 @@ function togglePopupClass() {
    popup.classList.toggle('active')
 }
 
-function googleTranslateElementInit() {
-   new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ru'}, 'google_translate_element');
- }
+// function googleTranslateElementInit() {
+//    new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ru'}, 'google_translate_element');
+//  }
 
 function handleInput(e) {
    storage = {
