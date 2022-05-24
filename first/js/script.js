@@ -58,7 +58,9 @@ const fetchData = async () => {
       // feelslike: feelslike, // Сетаем для одноименного параметра storage его аналог из data // Одноименное слово можно не писать дважды
       temperature,
       // observationTime: observation_time, // В js приянто писать стилем camelCase, поэтому необходимо присвоить значение объектного словосочетания нашей переменной, но ещё проще задать будущее название переменной ещё при деструктуризации
-      observationTime: observationTime.replaceAll('AM', ''),
+      
+      // observationTime: observationTime.replaceAll(/AM|PM/gm, ''), // Для русского языка можно убрать AM и PM
+      observationTime,
 
       isDay,
       description: description[0], // Всегда берём нулевой элемент массива description изи объекта data
