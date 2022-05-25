@@ -1,4 +1,4 @@
-const link = 'http://api.weatherstack.com/current?access_key=f7c979d0e7c28008a336968b6dc80bdc'
+const link = 'http://api.weatherstack.com/current?access_key=67aa02db45170b4a48de0428f1480177'
 
 // language = ru русский язык API поддерживается только на профессиональном тарифном плане
 
@@ -57,7 +57,7 @@ const fetchData = async () => {
       city: name,
       // feelslike: feelslike, // Сетаем для одноименного параметра storage его аналог из data // Одноименное слово можно не писать дважды
       temperature,
-      // observationTime: observation_time, // В js приянто писать стилем camelCase, поэтому необходимо присвоить значение объектного словосочетания нашей переменной, но ещё проще задать будущее название переменной ещё при деструктуризации
+      // observationTime: observation_time, // В js принято писать стилем camelCase, поэтому необходимо присвоить значение объектного словосочетания нашей переменной, но ещё проще задать будущее название переменной ещё при деструктуризации
       
       observationTime: observationTime.replaceAll(/AM|PM/gm, ''), // Для русского языка можно убрать AM и PM
       // observationTime,
