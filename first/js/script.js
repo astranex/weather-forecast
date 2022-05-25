@@ -59,47 +59,47 @@ const fetchData = async () => {
       temperature,
       // observationTime: observation_time, // В js приянто писать стилем camelCase, поэтому необходимо присвоить значение объектного словосочетания нашей переменной, но ещё проще задать будущее название переменной ещё при деструктуризации
       
-      // observationTime: observationTime.replaceAll(/AM|PM/gm, ''), // Для русского языка можно убрать AM и PM
-      observationTime,
+      observationTime: observationTime.replaceAll(/AM|PM/gm, ''), // Для русского языка можно убрать AM и PM
+      // observationTime,
 
       isDay,
-      description: description[0], // Всегда берём нулевой элемент массива description изи объекта data
+      description: description[0], // Всегда берём нулевой элемент массива description из объекта data
 
       properties: {
          cloudcover: {
-            // title: "Облачность",
-            title: "Cloudcover",
+            title: "Облачность",
+            // title: "Cloudcover",
             value: `${cloudcover}%`,
             icon: "cloud.png",
           },
           humidity: {
-            // title: "Влажность",
-            title: "Humidity",
+            title: "Влажность",
+            // title: "Humidity",
             value: `${humidity}%`,
             icon: "humidity.png",
           },
           windSpeed: {
-            // title: "Скорость ветра",
-            title: "Wind Speed",
-            value: `${windSpeed} km/h`,
+            title: "Скорость ветра",
+            // title: "Wind Speed",
+            value: `${windSpeed} км/ч`,
             icon: "wind.png",
           },
           pressure: {
-            // title: "Давление",
-            title: "Pressure",
-            value: `${pressure} mb`,
+            title: "Давление",
+            // title: "Pressure",
+            value: `${pressure} мб`,
             icon: "gauge.png",
           },
           uvIndex: {
-            // title: "УФ-индекс",
-            title: "UV-index",
-            value: `${uvIndex} level`,
+            title: "УФ-индекс",
+            // title: "UV-index",
+            value: `${uvIndex}-й уровень`,
             icon: "uv-index.png",
           },
           visibility: {
-            // title: "Видимость",
-            title: "Visibility",
-            value: `${visibility} km`,
+            title: "Видимость",
+            // title: "Visibility",
+            value: `${visibility} км`,
             icon: "visibility.png",
           },
    
@@ -118,13 +118,13 @@ const fetchData = async () => {
 }
 
 function getImage(description) {
-   const value = description.toLowerCase();
+   const value = description.toLowerCase()
  
    switch (value) {
      case "overcast":
        return "overcast.png"
      case "partly cloudy":
-       return "partly.png";
+       return "partly.png"
      case "fog":
        return "fog.png"
      case "sunny":
@@ -136,6 +136,31 @@ function getImage(description) {
      default:
        return "the.png"
    }
+}
+
+function getDescription(description) {
+   const value = description.toLowerCase()
+
+   switch (value) {
+      case "overcast":
+        return "Пасмурно"
+      case "partly cloudy":
+        return "Переменная облачность"
+      case "fog":
+        return "Туманно"
+      case "sunny":
+        return "Солнечно"
+      case "cloud":
+        return "Облачно"
+      case "clear":
+         return "Ясно"
+      case "light rain shower":
+         return "Лёгкий ливень"
+      case "moderate or heavy rain shower":
+         return "Умеренный или сильный ливень"
+      default:
+        return description
+    }
 }
 
 function renderProperty(properties) {
@@ -164,7 +189,7 @@ function markup() {
    return `<div class="container ${containerClass}">
             <div class="top">
             <div class="city">
-               <div class="city-subtitle">Today in</div>
+               <div class="city-subtitle">Погода в городе</div>
                   <div class="city-title" id="city">
                   <span>${city}</span>
                </div>
@@ -172,10 +197,10 @@ function markup() {
             <div class="city-info">
                <div class="top-left">
                <img class="icon" src="./img/weather/${getImage(description)}" alt="" />
-               <div class="description">${description}</div>
+               <div class="description">${getDescription(description)}</div>
             </div>
             <div class="top-right">
-               <div class="city-info__subtitle">As of ${observationTime}</div>
+               <div class="city-info__subtitle">По состоянию на ${observationTime}</div>
                <div class="city-info__title">${temperature}°</div>
             </div>
             </div>
