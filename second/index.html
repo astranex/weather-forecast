@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Прогноз погоды</title>
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="shortcut icon" href="img/icons/weather_icon_thunder.svg" type="image/x-icon">
+</head>
+<body>
+
+   <div class="container">
+
+      <div class="date-info">
+         <p>Четверг, 26.05.2022</p>
+      </div>
+
+      <div class="main-info current-weather">
+         <div class="city">
+            <h1 class="city-title">Москва</h1>
+            <h2 class="city-temperature">+15°</h2>
+         </div>
+         <div class="city-info">
+            <img class="city-info--icon" src="img/icons/weather_icon_partly_cloudy.svg">
+         </div>
+      </div>
+
+      <div class="hourly-forecast">
+
+         <div class="hourly-forecast-container">
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--hour">11:00</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--temperature">17°</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <img class="hourly-forecast--icon" src="img/icons/weather_icon_rainy.svg">
+            </div>
+         </div>
+
+         <div class="hourly-forecast-container">
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--hour">12:00</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--temperature">10°</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <img class="hourly-forecast--icon" src="img/icons/weather_icon_sun_rain_clouds.svg">
+            </div>
+         </div>
+
+         <div class="hourly-forecast-container">
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--hour">13:00</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--temperature">5°</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <img class="hourly-forecast--icon" src="img/icons/weather_icon_partly_cloudy.svg">
+            </div>
+         </div>
+
+         <div class="hourly-forecast-container">
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--hour">14:00</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--temperature">-1°</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <img class="hourly-forecast--icon" src="img/icons/weather_icon_full_clouds.svg">
+            </div>
+         </div>
+
+         <div class="hourly-forecast-container">
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--hour">15:00</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <p class="hourly-forecast--temperature">3°</p>
+            </div>
+            <div class="hourly-forecast-child">
+               <img class="hourly-forecast--icon" src="img/icons/weather_icon_full_sun.svg">
+            </div>
+         </div>
+
+      </div>
+
+      <div class="weather-descriptions">
+         
+         <div class="weather-description weather-description--cloudcover">
+            <p class="description">Облачность</p>
+            <p class="value">53%</p>
+         </div>
+         <div class="weather-description weather-description--humidity">
+            <p class="description">Влажность</p>
+            <p class="value">78%</p>
+         </div>
+         <div class="weather-description weather-description--wind">
+            <p class="description">Ветер</p>
+            <p class="value">5 км/ч</p>
+         </div>
+         <div class="weather-description weather-description--pressure">
+            <p class="description">Давление</p>
+            <p class="value">723 мм</p>
+         </div>
+
+      </div>
+
+      <div class="daily-forecast">
+
+         <div class="day day-active">
+            <p class="daily-date">Четверг, 26.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_partly_cloudy.svg">
+               <p class="daily-max-temperature">15°</p>
+               <p class="daily-min-temperature">-1°</p>
+            </div>
+         </div>
+
+         <div class="day">
+            <p class="daily-date">Пятница, 27.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_thunder.svg">
+               <p class="daily-max-temperature">13°</p>
+               <p class="daily-min-temperature">-2°</p>
+            </div>
+         </div>
+
+         <div class="day">
+            <p class="daily-date">Суббота, 28.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_full_sun.svg">
+               <p class="daily-max-temperature">13°</p>
+               <p class="daily-min-temperature">-2°</p>
+            </div>
+         </div>
+
+         <div class="day">
+            <p class="daily-date">Воскресенье, 29.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_partly_cloudy.svg">
+               <p class="daily-max-temperature">13°</p>
+               <p class="daily-min-temperature">-2°</p>
+            </div>
+         </div>
+
+         <!-- <div class="day">
+            <p class="daily-date">Понедельник, 30.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_sun_rain_clouds.svg">
+               <p class="daily-max-temperature">13°</p>
+               <p class="daily-min-temperature">-2°</p>
+            </div>
+         </div>
+
+         <div class="day">
+            <p class="daily-date">Вторник, 31.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_full_sun.svg">
+               <p class="daily-max-temperature">13°</p>
+               <p class="daily-min-temperature">-2°</p>
+            </div>
+         </div>
+
+         <div class="day">
+            <p class="daily-date">Среда, 32.05.2022</p>
+            <div class="daily-info">
+               <img class="daily-icon weathercode" src="img/icons/weather_icon_rainy.svg">
+               <p class="daily-max-temperature">13°</p>
+               <p class="daily-min-temperature">-2°</p>
+            </div>
+         </div> -->
+
+         <div class="open-daily-forecast">
+            <span>...</span>
+         </div>
+
+      </div>
+
+   </div>
+   
+   <script src="js/script.js"></script>
+</body>
+</html>

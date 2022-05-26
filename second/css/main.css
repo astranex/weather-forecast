@@ -1,0 +1,234 @@
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+}
+
+img {
+   filter: saturate(120%) brightness(105%);
+}
+
+body {
+   background: #bedaf1;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+   color: #fff;
+}
+
+.container {
+   /* background: linear-gradient(90deg, rgba(38,128,230,1) 0%, rgba(56,139,235,1) 45%, rgba(56,142,241,1) 100%); */
+   background: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612761847_56-p-goluboi-fon-leto-63.jpg) no-repeat center top / cover; /* Ясная погода */
+   /* background: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612453580_49-p-seroe-nebo-fon-57.jpg) no-repeat center top / cover; Пасмурная погода */
+   /* background: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612761847_56-p-goluboi-fon-leto-63.jpg) no-repeat center top / cover; Ясная погода */
+   margin: 0 auto;
+   margin-top: 60px;
+   max-width: 400px;
+   max-height: 1000px;
+   display: flex;
+   flex-wrap: wrap;
+   border-radius: 25px;
+}
+
+.overcast {
+   background: url(https://phonoteka.org/uploads/posts/2022-01/1643288772_76-phonoteka-org-p-dozhdlivoe-nebo-fon-81.png) no-repeat center top / cover; /* Пасмурная погода */
+}
+
+.date-info {
+   color: #bfe6ff;
+   margin-top: 30px;
+   width: 100%;
+   text-align: center;
+}
+
+.main-info {
+   display: flex;
+   justify-content: center;
+}
+
+.city {
+   margin-top: 40px;
+   margin-left: 30px;
+}
+
+h1 {
+   background-color: #2174d3;
+   padding: 5px 15px;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+h2 {
+   font-size: 62px;
+   font-weight: 800;
+}
+
+.city-info {
+   margin-top: 25px;
+   margin-left: 35px;
+}
+
+.city-info--icon {
+   position: relative;
+   display: flex-end;
+   width: 160px;
+   height: 160px;
+   cursor: pointer;
+   /* filter: saturate(150%) brightness(105%); */
+   transition: .2s all ease;
+}
+
+.hourly-forecast {
+   background: linear-gradient(90deg, rgb(67, 147, 238) 0%, rgb(83, 158, 243)45%, rgb(80, 156, 243)100%);
+   /* border: #3fa3e0 2px solid; */
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+}
+
+.hourly-forecast-container:first-child {
+   margin-left: 27px;
+}
+
+.hourly-forecast-container {
+   margin-top: 10px;
+   max-width: 20%;
+   margin-left: 14px;
+   margin-right: 14px;
+   display: inline-block;
+}
+
+.hourly-forecast-child {
+   width: 100%;
+}
+
+.hourly-forecast--hour {
+   color: #bfe6ff;
+   font-size: 14px;
+   font-weight: 500;
+}
+
+.hourly-forecast--temperature {
+   font-size: 20px;
+   margin-top: 2px;
+   font-weight: 800;
+}
+
+.hourly-forecast--icon {
+   margin-left: -12px;
+}
+
+.weather-descriptions {
+   background: #2174d3;
+   width: 100%;
+   height: 60px;
+   display: flex;
+   justify-content: space-around;
+}
+
+.weather-description:first-child {
+   margin-left: 8px;
+}
+
+.weather-description {
+   margin-top: 15px;
+   margin-left: 5px;
+   margin-right: 5px;
+   display: inline-block;
+}
+
+.description {
+   width: 100%;
+   font-size: 12px;
+   color: #bfe6ff;
+}
+
+.value {
+   width: 100%;
+   font-size: 14px;
+   font-weight: 800;
+}
+
+.daily-forecast {
+   background: linear-gradient(90deg, rgba(38,128,230,0.85) 0%, rgba(56,139,235,0.85) 45%, rgba(56,142,241,0.85) 100%);
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.day {
+   border: rgba(0, 0, 0, 0) 2px solid;
+   color: #bfe6ff;
+   padding-left: 20px;
+   width: 100%;
+   height: 50px;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 14px;
+   font-weight: 700;
+   cursor: pointer;
+   display: none;
+   opacity: 0;
+   transition: .2s all ease;
+}
+
+.day-open {
+   display: flex;
+   transition: .2s all ease;
+
+}
+
+.day-visible {
+   opacity: 1;
+   transition: .2s all ease;
+}
+
+.day:last-child {
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+}
+
+.day:hover {
+   background: #4c99f0;
+   border: #3fa3e0 2px solid;
+}
+
+.day-active {
+   background: #4c99f0;
+   border: #3fa3e0 2px solid;
+}
+
+.daily-info {
+   padding-right: 15px;
+   display: flex;
+   align-items: center;
+}
+
+.daily-icon {
+   margin-top: -2px;
+   width: 45px;
+   height: 45px;
+}
+
+.daily-info p {
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+.open-daily-forecast {
+   background: #2174d3;
+   width: 100%;
+   display: flex;
+   font-size: 24px;
+   justify-content: center;
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+}
+
+.open-daily-forecast {
+   padding-bottom: 15px;
+   cursor: pointer;
+}
