@@ -34,7 +34,7 @@ const fetchData = async () => {
 
    // console.log(data.current.feelslike)
    // console.log(data.request.language)
-   console.log(data)
+   // console.log(data)
 
    const { 
       current: { 
@@ -49,7 +49,7 @@ const fetchData = async () => {
          weather_descriptions: description, 
          wind_speed: windSpeed 
       }, // Мы берём значения для этих переменных из одноименных свойств объекта data (подобъекта current)
-      location: { name }, // Берём имя из одноименного свойства подобъекта location объекта data
+      location: { name }, // Берём имя из одноименного свойства вложенного объекта location объекта data
     } = data //// Деструктуризация
 
    storage = {
