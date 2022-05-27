@@ -226,9 +226,11 @@ h2 {
    justify-content: center;
    border-bottom-left-radius: 25px;
    border-bottom-right-radius: 25px;
-}
-
-.open-daily-forecast {
    padding-bottom: 15px;
    cursor: pointer;
+   transition: .2s all ease;
+}
+
+.open-daily-forecast:hover {
+   background: #1e6cc5;
 }
